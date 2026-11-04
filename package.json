@@ -1,0 +1,23 @@
+{
+  "name": "pinkypay",
+  "version": "2.1.0",
+  "description": "PinkyPay - Aplikasi Keuangan & Anggaran Dual-Akun (Mia & Peter) dengan Realtime SQLite Sync, PWA App & Public Hosting",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "share": "npx localtunnel --port 3000 --subdomain pinkypay-mia-peter",
+    "tunnel": "npx cloudflared tunnel --url http://localhost:3000",
+    "test": "node test_suite.js"
+  },
+  "keywords": [
+    "finance",
+    "budget",
+    "pinkypay",
+    "realtime",
+    "sqlite",
+    "pwa",
+    "multi-device"
+  ],
+  "author": "PinkyPay Team",
+  "license": "MIT"
+}

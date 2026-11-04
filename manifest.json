@@ -1,0 +1,43 @@
+{
+  "name": "PinkyPay - Keuangan Mia & Peter",
+  "short_name": "PinkyPay",
+  "description": "Aplikasi Manajemen Keuangan & Anggaran Dual-Akun Realtime",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff1f5",
+  "theme_color": "#ec4899",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Beranda & Transaksi",
+      "short_name": "Home",
+      "description": "Buka Beranda Transaksi",
+      "url": "/#home",
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Anggaran & Amplop",
+      "short_name": "Anggaran",
+      "description": "Kelola Kuota Anggaran",
+      "url": "/#budgets",
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96" }]
+    }
+  ]
+}
+
