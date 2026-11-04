@@ -235,61 +235,53 @@
   <div id="toastContainer" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none no-print"></div>
 
   <!-- Minimalist Top Navbar with Burger Menu Button -->
-  <header class="sticky top-0 z-30 pink-glass shadow-sm no-print">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+  <header class="sticky top-0 z-30 pink-glass shadow-xs border-b border-pink-200/70 no-print">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
+      <!-- Left: Navigation Toggle + Brand + Account Switcher -->
       <div class="flex items-center gap-2 sm:gap-3">
         <!-- Burger Bar Trigger Button -->
-        <button id="btnOpenBurger" type="button" aria-label="Buka Menu Navigasi" class="w-10 h-10 rounded-xl bg-pink-100 hover:bg-pink-200 text-pink-800 flex items-center justify-center transition shadow-2xs border border-pink-200 shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+        <button id="btnOpenBurger" type="button" aria-label="Buka Menu Navigasi" class="w-9 h-9 rounded-xl bg-white/90 hover:bg-pink-100/80 text-pink-700 flex items-center justify-center transition shadow-2xs border border-pink-200 shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
 
+        <!-- Brand Logo & Title -->
         <div class="flex items-center gap-2">
-          <div class="w-9 h-9 rounded-xl pink-gradient flex items-center justify-center text-white shadow-sm shadow-pink-300/60 shrink-0">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <div class="w-8 h-8 rounded-xl pink-gradient flex items-center justify-center text-white shadow-xs shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
             </svg>
           </div>
           <div>
             <div class="flex items-center gap-1.5">
-              <h1 class="text-base sm:text-lg font-extrabold tracking-tight text-pink-800">PinkyFlow</h1>
+              <h1 class="text-base font-extrabold tracking-tight text-pink-900">PinkyFlow</h1>
               <span id="activeNavBadge" class="hidden px-2 py-0.5 text-[10px] font-bold bg-pink-100 text-pink-700 rounded-full border border-pink-200"></span>
             </div>
           </div>
         </div>
 
-        <!-- Dual Account Switcher (Mia & Peter) -->
-        <div class="flex items-center bg-pink-100/90 p-1 rounded-2xl border border-pink-200 shadow-2xs ml-1 sm:ml-2">
-          <button type="button" data-switch-user="mia" class="user-switch-btn flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-xl text-xs font-extrabold transition">
-            <span>🌸</span>
+        <!-- Sleek Dual Account Switcher (Mia & Peter) -->
+        <div class="flex items-center bg-pink-100/70 p-0.5 rounded-xl border border-pink-200/80 shadow-2xs ml-1 sm:ml-2">
+          <button type="button" data-switch-user="mia" class="user-switch-btn flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-bold transition">
+            <span class="w-4 h-4 rounded-full bg-pink-500 text-white inline-flex items-center justify-center text-[10px] font-extrabold shadow-2xs">M</span>
             <span>Mia</span>
           </button>
-          <button type="button" data-switch-user="peter" class="user-switch-btn flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-xl text-xs font-extrabold transition">
-            <span>🧑‍💼</span>
+          <button type="button" data-switch-user="peter" class="user-switch-btn flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-bold transition">
+            <span class="w-4 h-4 rounded-full bg-sky-600 text-white inline-flex items-center justify-center text-[10px] font-extrabold shadow-2xs">P</span>
             <span>Peter</span>
           </button>
         </div>
       </div>
 
-      <!-- Compact Right Controls -->
-      <div class="flex flex-wrap items-center gap-2">
-        <!-- Quick Color Theme Selector -->
-        <div class="flex items-center bg-pink-50 border border-pink-200 rounded-xl px-2.5 py-1.5 text-xs">
-          <select id="themeColorSelect" aria-label="Pilih Tema Warna" class="bg-transparent font-bold text-pink-900 focus:outline-none cursor-pointer">
-            <option value="pink">🌸 Sakura Sunset (Pink)</option>
-            <option value="candy">🦄 Cotton Candy (Gradasi)</option>
-            <option value="aurora">🔮 Aurora Borealis (Gradasi)</option>
-            <option value="peach">🌅 Tropical Sunset (Gradasi)</option>
-            <option value="lilac">💜 Velvet Amethyst</option>
-            <option value="ocean">🌊 Ocean Lagoon</option>
-            <option value="matcha">🌿 Matcha Botanical</option>
-            <option value="berry">🍒 Berry Rose Gold</option>
-          </select>
-        </div>
-
-        <div class="flex items-center bg-pink-50 border border-pink-200 rounded-xl px-2.5 py-1.5 text-xs">
-          <select id="baseCurrencySelect" aria-label="Mata Uang Utama" class="bg-transparent font-bold text-pink-900 focus:outline-none cursor-pointer">
+      <!-- Right Header Actions: Currency, Save, Log, Rate, AI -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <!-- Compact Currency Selector -->
+        <div class="relative flex items-center bg-white/90 hover:bg-white border border-pink-200/90 rounded-xl px-2 sm:px-2.5 py-1.5 text-xs shadow-2xs">
+          <svg class="w-3.5 h-3.5 text-pink-500 mr-1 shrink-0 hidden sm:inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+          </svg>
+          <select id="baseCurrencySelect" aria-label="Mata Uang Utama" class="bg-transparent font-extrabold text-pink-900 focus:outline-none cursor-pointer">
             <option value="IDR">IDR (Rp)</option>
             <option value="USD">USD ($)</option>
             <option value="SGD">SGD (S$)</option>
@@ -299,12 +291,49 @@
           </select>
         </div>
 
-        <button id="btnOpenRateModal" type="button" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-white hover:bg-pink-50 text-pink-700 border border-pink-200 transition shadow-2xs flex items-center gap-1">
-          <span>💱 Kurs</span>
+        <!-- Hidden theme color select to preserve JS sync -->
+        <select id="themeColorSelect" class="hidden" aria-hidden="true">
+          <option value="pink">pink</option>
+          <option value="candy">candy</option>
+          <option value="aurora">aurora</option>
+          <option value="peach">peach</option>
+          <option value="lilac">lilac</option>
+          <option value="ocean">ocean</option>
+          <option value="matcha">matcha</option>
+          <option value="berry">berry</option>
+        </select>
+
+        <!-- Tombol Simpan Manual dengan SVG Icon -->
+        <button id="btnManualSave" type="button" title="Simpan data akun saat ini ke penyimpanan lokal" class="px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold bg-white hover:bg-pink-50 text-pink-900 border border-pink-200/90 transition shadow-2xs flex items-center gap-1.5 shrink-0">
+          <svg class="w-3.5 h-3.5 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+          </svg>
+          <span class="hidden sm:inline">Simpan</span>
         </button>
 
-        <button id="btnOpenAiDrawer" type="button" class="px-3 py-1.5 rounded-xl text-xs font-bold text-white pink-gradient hover:opacity-95 transition shadow-sm shadow-pink-300/50 flex items-center gap-1.5">
-          <span>✨ Asisten Chat AI</span>
+        <!-- Tombol Riwayat Log Akun dengan SVG Icon -->
+        <button id="btnOpenHistoryLog" type="button" title="Buka Riwayat Log Aktivitas Akun" class="px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold bg-white hover:bg-pink-50 text-pink-900 border border-pink-200/90 transition shadow-2xs flex items-center gap-1.5 shrink-0">
+          <svg class="w-3.5 h-3.5 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="hidden sm:inline">Log</span>
+          <span id="headerLogCountBadge" class="px-1.5 py-0.2 rounded-full bg-pink-100 text-pink-700 text-[10px] font-extrabold">0</span>
+        </button>
+
+        <!-- Tombol Kurs dengan SVG Icon -->
+        <button id="btnOpenRateModal" type="button" title="Atur Nilai Tukar Kurs" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white hover:bg-pink-50 text-pink-800 border border-pink-200/90 transition shadow-2xs flex items-center gap-1 shrink-0">
+          <svg class="w-3.5 h-3.5 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/>
+          </svg>
+          <span class="hidden sm:inline">Kurs</span>
+        </button>
+
+        <!-- Tombol Asisten AI dengan Sparkles SVG -->
+        <button id="btnOpenAiDrawer" type="button" class="px-3 py-1.5 rounded-xl text-xs font-bold text-white pink-gradient hover:opacity-95 transition shadow-xs shadow-pink-300/50 flex items-center gap-1.5 shrink-0">
+          <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+          </svg>
+          <span class="hidden sm:inline">Asisten AI</span>
         </button>
       </div>
     </div>
@@ -313,65 +342,101 @@
   <!-- Slide-out Burger Navigation Sidebar -->
   <div id="burgerBackdrop" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-40 hidden no-print"></div>
   <aside id="burgerDrawer" class="fixed top-0 left-0 h-full w-72 bg-white shadow-2xl border-r border-pink-200 z-50 transform -translate-x-full transition-transform duration-300 flex flex-col no-print">
+    <!-- Drawer Header -->
     <div class="p-4 pink-gradient text-white flex items-center justify-between">
       <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-lg">🌸</div>
+        <div class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center shadow-xs">
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
+          </svg>
+        </div>
         <div>
-          <h2 class="text-sm font-extrabold">Menu PinkyFlow</h2>
-          <p class="text-[11px] text-pink-100">Navigasi Cepat & Ringkas</p>
+          <h2 class="text-sm font-extrabold tracking-tight">Menu Navigasi</h2>
+          <p class="text-[11px] text-pink-100">PinkyFlow Keuangan</p>
         </div>
       </div>
-      <button id="btnCloseBurger" type="button" class="w-8 h-8 rounded-lg bg-white/20 hover:bg-white/30 flex items-center justify-center font-bold">✕</button>
+      <button id="btnCloseBurger" type="button" aria-label="Tutup Menu" class="w-8 h-8 rounded-lg bg-white/20 hover:bg-white/30 flex items-center justify-center transition">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
 
     <div class="flex-1 overflow-y-auto custom-scroll p-3.5 space-y-4">
-      <!-- User Switcher in Sidebar Drawer -->
-      <div class="p-3 bg-pink-50/90 rounded-2xl border border-pink-200 space-y-2">
+      <!-- Status Akun Aktif & Simpan Data Cepat di Drawer -->
+      <div class="p-3 rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100/60 border border-pink-200/80 space-y-2.5">
         <div class="flex items-center justify-between">
-          <span class="text-[10px] font-extrabold uppercase tracking-wider text-pink-600">Pilih Akun Aktif</span>
-          <span id="drawerActiveUserBadge" class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-pink-200 text-pink-800">🌸 Mia</span>
+          <span class="text-[10px] font-extrabold uppercase tracking-wider text-pink-600">Ruang Akun</span>
+          <span id="drawerActiveUserBadge" class="px-2 py-0.5 rounded-full text-xs font-bold bg-white text-pink-800 shadow-2xs border border-pink-200 flex items-center gap-1">Mia</span>
         </div>
-        <div class="grid grid-cols-2 gap-2">
+        <div class="grid grid-cols-2 gap-1.5">
           <button type="button" data-switch-user="mia" class="drawer-user-btn py-2 px-3 rounded-xl text-xs font-extrabold border transition flex items-center justify-center gap-1.5">
-            <span>🌸</span>
+            <span class="w-4 h-4 rounded-full bg-pink-500 text-white inline-flex items-center justify-center text-[10px] font-bold">M</span>
             <span>Mia</span>
           </button>
           <button type="button" data-switch-user="peter" class="drawer-user-btn py-2 px-3 rounded-xl text-xs font-extrabold border transition flex items-center justify-center gap-1.5">
-            <span>🧑‍💼</span>
+            <span class="w-4 h-4 rounded-full bg-sky-600 text-white inline-flex items-center justify-center text-[10px] font-bold">P</span>
             <span>Peter</span>
           </button>
         </div>
-        <p class="text-[10px] text-pink-500 text-center font-medium">Data Mia & Peter tersimpan terpisah</p>
+        <div class="flex items-center justify-between pt-1 border-t border-pink-200/60">
+          <div class="flex items-center gap-1.5 text-[10px] text-pink-700 font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="drawerSaveStatus">Tersimpan otomatis</span>
+          </div>
+          <button type="button" id="btnDrawerManualSave" class="px-2 py-0.5 rounded-lg bg-pink-100 hover:bg-pink-200 text-pink-800 text-[10px] font-extrabold transition flex items-center gap-1">
+            <svg class="w-3 h-3 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+            </svg>
+            <span>Simpan</span>
+          </button>
+        </div>
       </div>
 
-      <!-- Menu Navigasi Rapi Tanpa Nomor -->
+      <!-- Menu Navigasi Modern dengan SVG Icons -->
       <div>
         <p class="px-2.5 text-[10px] font-extrabold uppercase tracking-wider text-pink-500 mb-2">Menu Utama</p>
         <nav class="space-y-1.5" aria-label="Menu Utama">
           <button type="button" data-tab="transactions" class="nav-tab-btn w-full px-3 py-2.5 rounded-xl text-xs font-bold text-left transition flex items-center justify-between pink-gradient text-white shadow-sm">
             <span class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center text-sm">🏠</span>
+              <span class="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+                </svg>
+              </span>
               <span>Beranda & Transaksi</span>
             </span>
           </button>
 
           <button type="button" data-home-mode="input" class="home-mode-btn w-full px-3 py-2.5 rounded-xl text-xs font-semibold text-left text-pink-800 hover:bg-pink-50 transition flex items-center justify-between">
             <span class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center text-sm">✍️</span>
+              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/>
+                </svg>
+              </span>
               <span>Catat Transaksi Manual</span>
             </span>
           </button>
 
           <button type="button" data-home-mode="wallets" class="home-mode-btn w-full px-3 py-2.5 rounded-xl text-xs font-semibold text-left text-pink-800 hover:bg-pink-50 transition flex items-center justify-between">
             <span class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center text-sm">👛</span>
+              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-6 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/>
+                </svg>
+              </span>
               <span>Multi-Dompet & Utang</span>
             </span>
           </button>
 
           <button type="button" data-tab="budgets" class="nav-tab-btn w-full px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition flex items-center justify-between text-pink-800 hover:bg-pink-50">
             <span class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center text-sm">💌</span>
+              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"/>
+                </svg>
+              </span>
               <span>Anggaran & Amplop Digital</span>
             </span>
             <span id="navBudgetAlertBadge" class="hidden px-1.5 py-0.5 text-[10px] font-extrabold bg-rose-500 text-white rounded-full">!</span>
@@ -379,7 +444,11 @@
 
           <button type="button" data-tab="bills" class="nav-tab-btn w-full px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition flex items-center justify-between text-pink-800 hover:bg-pink-50">
             <span class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center text-sm">🔔</span>
+              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/>
+                </svg>
+              </span>
               <span>Tagihan & Langganan</span>
             </span>
             <span id="navBillAlertBadge" class="hidden px-1.5 py-0.5 text-[10px] font-extrabold bg-pink-600 text-white rounded-full">0</span>
@@ -387,16 +456,32 @@
 
           <button type="button" data-tab="reports" class="nav-tab-btn w-full px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition flex items-center justify-between text-pink-800 hover:bg-pink-50">
             <span class="flex items-center gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center text-sm">📊</span>
+              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+                </svg>
+              </span>
               <span>Laporan & Grafik Visual</span>
             </span>
+          </button>
+
+          <button type="button" id="btnDrawerOpenHistoryLog" class="w-full px-3 py-2.5 rounded-xl text-xs font-semibold text-left transition flex items-center justify-between text-pink-800 hover:bg-pink-50">
+            <span class="flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </span>
+              <span>Log Aktivitas Akun</span>
+            </span>
+            <span id="drawerLogBadge" class="hidden px-2 py-0.5 text-[10px] font-extrabold bg-pink-600 text-white rounded-full">0</span>
           </button>
         </nav>
       </div>
 
       <!-- Pilihan Tema Gradasi di Burger Menu -->
       <div>
-        <p class="px-2.5 text-[10px] font-extrabold uppercase tracking-wider text-pink-500 mb-2">🎨 Tema Gradasi & Warna</p>
+        <p class="px-2.5 text-[10px] font-extrabold uppercase tracking-wider text-pink-500 mb-2">Tema & Tampilan</p>
         <div class="grid grid-cols-2 gap-1.5 px-1">
           <button type="button" data-theme-pick="pink" class="theme-swatch-btn flex items-center gap-2 px-2.5 py-2 rounded-xl border border-pink-200 bg-white hover:bg-pink-50 text-xs font-bold text-pink-900 transition">
             <span class="w-4 h-4 rounded-full shrink-0 shadow-2xs" style="background:linear-gradient(135deg,#ff6b9d,#ec4899,#fb7185)"></span>
@@ -434,10 +519,28 @@
       </div>
     </div>
 
-    <div class="p-3 border-t border-pink-100 bg-pink-50/60 flex items-center justify-between gap-2">
-      <span class="text-[11px] font-semibold text-pink-700">PinkyFlow Personal 💖</span>
-      <button type="button" id="btnResetAllData" class="px-2.5 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-600 border border-pink-200 text-[11px] font-bold transition">
-        🔄 Reset Kosong
+    <!-- Drawer Footer Actions -->
+    <div class="p-3 border-t border-pink-100 bg-pink-50/60 flex items-center justify-between gap-1.5 flex-wrap">
+      <div class="flex items-center gap-1.5">
+        <button type="button" id="btnBackupJson" class="px-2.5 py-1.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-bold transition flex items-center gap-1 shadow-2xs" title="Unduh berkas cadangan JSON">
+          <svg class="w-3.5 h-3.5 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+          </svg>
+          <span>Backup</span>
+        </button>
+        <label for="restoreJsonInput" class="px-2.5 py-1.5 rounded-lg bg-white hover:bg-pink-100 text-pink-800 border border-pink-200 text-xs font-bold transition flex items-center gap-1 cursor-pointer shadow-2xs" title="Pulihkan data dari berkas JSON">
+          <svg class="w-3.5 h-3.5 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+          </svg>
+          <span>Restore</span>
+        </label>
+        <input type="file" id="restoreJsonInput" accept=".json" class="hidden" />
+      </div>
+      <button type="button" id="btnResetAllData" class="px-2.5 py-1.5 rounded-lg bg-white hover:bg-rose-50 text-rose-600 border border-pink-200 text-xs font-bold transition flex items-center gap-1">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+        </svg>
+        <span>Reset</span>
       </button>
     </div>
   </aside>
@@ -449,7 +552,11 @@
     <div id="globalAlertBanner" class="hidden rounded-2xl p-3.5 bg-gradient-to-r from-rose-500 via-pink-600 to-fuchsia-600 text-white shadow-md shadow-pink-300/40 no-print">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
         <div class="flex items-start gap-2.5">
-          <div class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-base shrink-0">⚠️</div>
+          <div class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+            </svg>
+          </div>
           <div>
             <h2 class="text-xs font-extrabold uppercase tracking-wide">Peringatan Otomatis Anggaran & Tagihan</h2>
             <p id="globalAlertText" class="text-xs text-pink-50 mt-0.5 leading-relaxed"></p>
@@ -477,7 +584,7 @@
           <div>
             <div class="flex items-center gap-2 mb-1">
               <span id="heroAccountBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-extrabold text-white border border-white/25">
-                <span id="heroUserIcon">🌸</span>
+                <span id="heroUserIcon" class="w-4 h-4 rounded-full bg-pink-500 text-white inline-flex items-center justify-center text-[10px] font-extrabold shadow-2xs">M</span>
                 <span id="heroUserName">Akun Mia</span>
               </span>
               <span class="text-[11px] font-bold uppercase tracking-widest text-white/85">Total Saldo Bersih</span>
@@ -536,32 +643,46 @@
     <section id="tab-transactions" class="tab-panel space-y-5">
       <button type="button" id="btnQuickOpenBurger" class="hidden"></button>
 
-      <!-- Quick Text & AI Smart Bar -->
-      <div id="homeQuickBarSection" class="pink-glass rounded-2xl p-4 sm:p-5 shadow-sm border-2 border-pink-300/80">
+      <!-- Quick Text Input Bar -->
+      <div id="homeQuickBarSection" class="pink-glass rounded-2xl p-4 sm:p-5 shadow-xs border border-pink-200/80">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded-lg pink-gradient text-white text-xs font-bold">✨ Ketik Cepat AI</span>
-            <h2 id="quickTextHeaderTitle" class="text-sm sm:text-base font-extrabold text-pink-900">Input Transaksi via Ketik Teks / Chat Pintar — Akun Mia</h2>
+            <span class="w-6 h-6 rounded-lg pink-gradient text-white flex items-center justify-center shrink-0 shadow-2xs">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+              </svg>
+            </span>
+            <h2 id="quickTextHeaderTitle" class="text-sm sm:text-base font-extrabold text-pink-900 tracking-tight">Catat Cepat Transaksi</h2>
           </div>
-          <span class="text-xs text-pink-600">Mendukung multi-mata uang (rb, jt, USD, JPY, SGD, EUR, MYR) & deteksi dompet otomatis</span>
+          <span class="text-xs text-pink-600 font-medium">Ketik nominal & keterangan atau bahasa santai sehari-hari</span>
         </div>
         <form id="quickTextForm" class="flex flex-col sm:flex-row gap-2.5">
-          <input
-            id="quickTextInput"
-            type="text"
-            placeholder="Contoh: Beli skincare 185.000 pakai GoPay | Gajian 12.000.000 masuk BCA | Beli ramen 1.200 JPY pakai Kartu Kredit"
-            class="flex-1 rounded-xl border border-pink-300 bg-white px-4 py-2.5 text-sm text-pink-950 placeholder-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-500"
-          />
-          <button type="submit" class="px-5 py-2.5 rounded-xl pink-gradient text-white font-bold text-sm shadow-md shadow-pink-300/50 hover:opacity-95 transition whitespace-nowrap">
-            + Catat Otomatis
+          <div class="relative flex-1">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-pink-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/>
+              </svg>
+            </div>
+            <input
+              id="quickTextInput"
+              type="text"
+              placeholder="Contoh: Makan siang 45.000 via GoPay atau Gajian 12.000.000 masuk BCA..."
+              class="w-full rounded-xl border border-pink-200 bg-white pl-10 pr-4 py-2.5 text-sm text-pink-950 placeholder-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-500 shadow-2xs"
+            />
+          </div>
+          <button type="submit" class="px-5 py-2.5 rounded-xl pink-gradient text-white font-bold text-sm shadow-xs shadow-pink-300/40 hover:opacity-95 transition whitespace-nowrap flex items-center justify-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+            </svg>
+            <span>Catat Otomatis</span>
           </button>
         </form>
         <div class="flex flex-wrap items-center gap-1.5 mt-2.5">
-          <span class="text-[11px] font-semibold text-pink-600">Coba klik contoh:</span>
-          <button type="button" data-sample="Beli matcha latte & croissant 65.000 pakai GoPay" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium transition">"Beli matcha latte 65.000 pakai GoPay"</button>
-          <button type="button" data-sample="Belanja bulanan supermarket 450.000 pakai BCA" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium transition">"Belanja bulanan 450.000 pakai BCA"</button>
-          <button type="button" data-sample="Beli oleh-oleh Tokyo 2.500 JPY pakai Kartu Kredit" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium transition">"Oleh-oleh Tokyo 2.500 JPY pakai Kartu Kredit"</button>
-          <button type="button" data-sample="Bonus proyek desain 150 USD masuk Mandiri" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium transition">"Bonus 150 USD masuk Mandiri"</button>
+          <span class="text-[11px] font-semibold text-pink-500">Contoh input:</span>
+          <button type="button" data-sample="Makan siang kafe 65.000 pakai GoPay" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-white hover:bg-pink-100 text-pink-800 font-medium border border-pink-200 transition shadow-2xs">Makan siang 65.000 via GoPay</button>
+          <button type="button" data-sample="Belanja bulanan supermarket 450.000 pakai BCA" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-white hover:bg-pink-100 text-pink-800 font-medium border border-pink-200 transition shadow-2xs">Belanja bulanan 450.000 via Bank</button>
+          <button type="button" data-sample="Beli oleh-oleh Tokyo 2.500 JPY pakai Kartu Kredit" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-white hover:bg-pink-100 text-pink-800 font-medium border border-pink-200 transition shadow-2xs">Oleh-oleh 2.500 JPY via Kartu Kredit</button>
+          <button type="button" data-sample="Bonus proyek lepas 150 USD masuk Mandiri" class="quick-sample-btn text-[11px] px-2.5 py-1 rounded-full bg-white hover:bg-pink-100 text-pink-800 font-medium border border-pink-200 transition shadow-2xs">Bonus 150 USD</button>
         </div>
       </div>
 
@@ -575,7 +696,7 @@
               <p class="text-xs text-pink-600">Pemasukan, pengeluaran, multi-valas & pos amplop</p>
             </div>
             <button type="button" id="btnOpenCategoryModal" class="px-2.5 py-1.5 rounded-xl bg-pink-100 hover:bg-pink-200 text-pink-800 font-bold text-xs transition">
-              ⚙️ Kustomisasi Kategori
+              <svg class="w-3.5 h-3.5 inline-block mr-1 text-pink-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Kustomisasi Kategori</span>
             </button>
           </div>
 
@@ -583,10 +704,10 @@
             <!-- Type Selector -->
             <div class="grid grid-cols-2 gap-2 p-1 bg-pink-100/80 rounded-xl">
               <button type="button" id="btnTypeExpense" data-tx-type="expense" class="tx-type-btn py-2 rounded-lg text-xs font-extrabold bg-pink-600 text-white shadow-sm transition">
-                💸 Pengeluaran
+                <svg class="w-3.5 h-3.5 inline-block mr-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 4.5l-15 15m0 0h11.25m-11.25 0V8.25"/></svg><span>Pengeluaran</span>
               </button>
               <button type="button" id="btnTypeIncome" data-tx-type="income" class="tx-type-btn py-2 rounded-lg text-xs font-extrabold text-pink-800 hover:bg-pink-200/60 transition">
-                💰 Pemasukan
+                <svg class="w-3.5 h-3.5 inline-block mr-1" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg><span>Pemasukan</span>
               </button>
             </div>
             <input type="hidden" id="txTypeInput" value="expense" />
@@ -644,7 +765,7 @@
             </div>
 
             <button type="submit" class="w-full py-2.5 rounded-xl pink-gradient text-white font-bold text-sm shadow-md shadow-pink-300/60 hover:opacity-95 transition">
-              💾 Simpan Transaksi
+              <svg class="w-4 h-4 inline-block mr-1.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Simpan Transaksi</span>
             </button>
           </form>
         </div>
@@ -682,7 +803,7 @@
             </div>
             <div class="flex items-center gap-2">
               <button type="button" id="btnOpenTransferModal" class="px-3 py-1.5 rounded-xl bg-pink-100 hover:bg-pink-200 text-pink-800 text-xs font-bold transition">
-                🔄 Transfer Antar Dompet
+                <svg class="w-3.5 h-3.5 inline-block mr-1 text-pink-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg><span>Transfer Saldo</span>
               </button>
               <button type="button" id="btnOpenAddWalletModal" class="px-3 py-1.5 rounded-xl pink-gradient text-white text-xs font-bold shadow-sm transition">
                 + Tambah Akun
@@ -746,8 +867,11 @@
               <h3 class="text-base font-extrabold text-pink-900">Batas Anggaran per Kategori</h3>
               <p id="budgetPeriodSubtitle" class="text-xs text-pink-600">Kuota Bulanan (Otomatis disesuaikan saat ganti ke Harian/Tahunan)</p>
             </div>
-            <button type="button" id="btnOpenEditBudgetModal" class="px-3 py-1.5 rounded-xl bg-pink-100 hover:bg-pink-200 text-pink-800 text-xs font-bold transition">
-              ✏️ Atur Kuota
+            <button type="button" id="btnOpenEditBudgetModal" class="px-3 py-1.5 rounded-xl bg-pink-100 hover:bg-pink-200 text-pink-800 text-xs font-bold transition flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-pink-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/>
+              </svg>
+              <span>Atur Kuota</span>
             </button>
           </div>
 
@@ -783,7 +907,7 @@
         <div class="lg:col-span-6 pink-glass rounded-2xl p-5 shadow-sm space-y-4">
           <div class="flex items-center justify-between border-b border-pink-100 pb-3">
             <div>
-              <h2 class="text-base font-extrabold text-pink-900">🔔 Pengingat Tagihan (Bill Reminders)</h2>
+              <h2 class="text-base font-extrabold text-pink-900">Pengingat Tagihan (Bill Reminders)</h2>
               <p class="text-xs text-pink-600">Cicilan, listrik, internet, air, dan kartu kredit agar bebas denda</p>
             </div>
             <button type="button" id="btnOpenAddBillModal" class="px-3 py-1.5 rounded-xl pink-gradient text-white text-xs font-bold shadow-sm transition">
@@ -798,7 +922,7 @@
         <div class="lg:col-span-6 pink-glass rounded-2xl p-5 shadow-sm space-y-4">
           <div class="flex items-center justify-between border-b border-pink-100 pb-3">
             <div>
-              <h2 class="text-base font-extrabold text-pink-900">📺 Dasbor Langganan Bulanan</h2>
+              <h2 class="text-base font-extrabold text-pink-900">Dasbor Langganan Bulanan</h2>
               <p class="text-xs text-pink-600">Lacak Netflix, Spotify, Gym & deteksi langganan yang jarang dipakai</p>
             </div>
             <button type="button" id="btnOpenAddSubModal" class="px-3 py-1.5 rounded-xl bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold transition">
@@ -838,11 +962,17 @@
           <p class="text-xs text-pink-600">Ringkasan arus kas per kategori, grafik visual, dan unduh laporan PDF / Excel (CSV)</p>
         </div>
         <div class="flex flex-wrap items-center gap-2 no-print">
-          <button type="button" id="btnExportCsv" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition flex items-center gap-1.5">
-            <span>📥 Unduh Excel / CSV</span>
+          <button type="button" id="btnExportCsv" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+            </svg>
+            <span>Unduh Excel / CSV</span>
           </button>
-          <button type="button" id="btnPrintPdf" class="px-3.5 py-2 rounded-xl pink-gradient text-white text-xs font-bold shadow-sm transition flex items-center gap-1.5">
-            <span>📄 Cetak / Simpan PDF</span>
+          <button type="button" id="btnPrintPdf" class="px-3.5 py-2 rounded-xl pink-gradient text-white text-xs font-bold shadow-xs transition flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5zm-3 0h.008v.008H15V10.5z"/>
+            </svg>
+            <span>Cetak / Simpan PDF</span>
           </button>
         </div>
       </div>
@@ -904,23 +1034,31 @@
   <aside id="aiDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl border-l border-pink-200 z-50 transform translate-x-full transition-transform duration-300 flex flex-col no-print">
     <div class="p-4 pink-gradient text-white flex items-center justify-between">
       <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-lg">🤖</div>
+        <div class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center shadow-xs">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+            </svg>
+          </div>
         <div>
           <h3 id="aiDrawerTitle" class="text-sm font-extrabold">PinkyBot — Asisten Keuangan AI (Mia)</h3>
           <p class="text-[11px] text-pink-100">Catat transaksi lewat chat & tanya analisis pengeluaran</p>
         </div>
       </div>
-      <button type="button" id="btnCloseAiDrawer" class="w-8 h-8 rounded-lg bg-white/20 hover:bg-white/30 flex items-center justify-center font-bold">✕</button>
+      <button type="button" id="btnCloseAiDrawer" aria-label="Tutup Asisten" class="w-8 h-8 rounded-lg bg-white/20 hover:bg-white/30 flex items-center justify-center transition">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
 
     <div id="aiChatMessages" class="flex-1 p-4 overflow-y-auto custom-scroll space-y-3 bg-pink-50/50"></div>
 
     <div class="p-3 bg-white border-t border-pink-100 space-y-2">
       <div class="flex flex-wrap gap-1.5">
-        <button type="button" data-ai-prompt="Ringkasan keuanganku bulan ini" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">📊 Ringkasan bulan ini</button>
-        <button type="button" data-ai-prompt="Pos mana paling boros?" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">🔥 Pos paling boros?</button>
-        <button type="button" data-ai-prompt="Beli kopi susu 28.000 pakai GoPay" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">☕ Catat kopi 28.000</button>
-        <button type="button" data-ai-prompt="Tips hemat bulan ini" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">💡 Tips hemat</button>
+        <button type="button" data-ai-prompt="Ringkasan keuanganku bulan ini" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">Ringkasan bulan ini</button>
+        <button type="button" data-ai-prompt="Pos mana paling boros?" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">Pos paling boros?</button>
+        <button type="button" data-ai-prompt="Beli kopi susu 28.000 pakai GoPay" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">Catat kopi 28.000</button>
+        <button type="button" data-ai-prompt="Tips hemat bulan ini" class="ai-chip-btn text-[11px] px-2.5 py-1 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium">Tips hemat cerdas</button>
       </div>
       <form id="aiChatForm" class="flex gap-2">
         <input id="aiChatInput" type="text" placeholder="Ketik transaksi atau tanya PinkyBot..." class="flex-1 rounded-xl border border-pink-300 px-3.5 py-2 text-xs text-pink-950 focus:outline-none focus:ring-2 focus:ring-pink-500" />
@@ -935,7 +1073,7 @@
   <div id="categoryModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-lg w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">⚙️ Kustomisasi Kategori</h3>
+        <h3 class="text-base font-extrabold text-pink-900"><svg class="w-3.5 h-3.5 inline-block mr-1 text-pink-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Kustomisasi Kategori</span></h3>
         <button type="button" data-close-modal="categoryModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="addCategoryForm" class="grid grid-cols-1 sm:grid-cols-12 gap-2">
@@ -957,7 +1095,7 @@
   <div id="walletModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">👛 Tambah Akun / Dompet Baru</h3>
+        <h3 class="text-base font-extrabold text-pink-900">Tambah Dompet Baru</h3>
         <button type="button" data-close-modal="walletModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="addWalletForm" class="space-y-3">
@@ -969,10 +1107,10 @@
           <div>
             <label class="block text-xs font-bold text-pink-800 mb-1">Jenis Akun</label>
             <select id="newWalletType" class="w-full rounded-xl border border-pink-200 px-3 py-2 text-xs font-semibold text-pink-900">
-              <option value="Bank">🏦 Rekening Bank</option>
-              <option value="E-Wallet">📱 E-Wallet</option>
-              <option value="Tunai">💵 Uang Tunai</option>
-              <option value="Kartu Kredit">💳 Kartu Kredit</option>
+              <option value="Bank">Rekening Bank</option>
+              <option value="E-Wallet">E-Wallet (GoPay, OVO, dll)</option>
+              <option value="Tunai">Uang Tunai</option>
+              <option value="Kartu Kredit">Kartu Kredit</option>
             </select>
           </div>
           <div>
@@ -1002,7 +1140,7 @@
   <div id="transferModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">🔄 Transfer Saldo Antar Dompet</h3>
+        <h3 class="text-base font-extrabold text-pink-900">Transfer Saldo Antar Dompet</h3>
         <button type="button" data-close-modal="transferModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="transferForm" class="space-y-3">
@@ -1031,14 +1169,14 @@
   <div id="debtModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">🤝 Catat Utang / Piutang</h3>
+        <h3 class="text-base font-extrabold text-pink-900">Catat Utang & Piutang</h3>
         <button type="button" data-close-modal="debtModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="addDebtForm" class="space-y-3">
         <div class="grid grid-cols-2 gap-2">
           <select id="debtType" class="rounded-xl border border-pink-200 px-3 py-2 text-xs font-bold text-pink-900">
-            <option value="receivable">📗 Piutang (Orang Pinjam ke Kita)</option>
-            <option value="payable">📕 Utang (Kita Pinjam ke Orang)</option>
+            <option value="receivable">Piutang (Akan kita terima)</option>
+            <option value="payable">Utang (Harus kita bayar)</option>
           </select>
           <input id="debtPerson" type="text" required placeholder="Nama Orang / Pihak" class="rounded-xl border border-pink-200 px-3 py-2 text-xs" />
         </div>
@@ -1067,7 +1205,7 @@
   <div id="editBudgetModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-lg w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">✏️ Atur Kuota Anggaran Bulanan per Kategori</h3>
+        <h3 class="text-base font-extrabold text-pink-900">Atur Kuota Anggaran Bulanan</h3>
         <button type="button" data-close-modal="editBudgetModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="editBudgetForm" class="space-y-3">
@@ -1083,7 +1221,7 @@
   <div id="envelopeModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">💌 Buat Amplop Digital Baru</h3>
+        <h3 class="text-base font-extrabold text-pink-900">Buat Amplop Digital</h3>
         <button type="button" data-close-modal="envelopeModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="addEnvelopeForm" class="space-y-3">
@@ -1112,7 +1250,7 @@
   <div id="billModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">🔔 Tambah Pengingat Tagihan</h3>
+        <h3 class="text-base font-extrabold text-pink-900">Tambah Pengingat Tagihan</h3>
         <button type="button" data-close-modal="billModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="addBillForm" class="space-y-3">
@@ -1145,7 +1283,7 @@
   <div id="subModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
     <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
-        <h3 class="text-base font-extrabold text-pink-900">📺 Tambah Layanan Langganan</h3>
+        <h3 class="text-base font-extrabold text-pink-900">Tambah Layanan Langganan</h3>
         <button type="button" data-close-modal="subModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
       </div>
       <form id="addSubForm" class="space-y-3">
@@ -1166,8 +1304,8 @@
         <div>
           <label class="block text-xs font-bold text-pink-800 mb-1">Frekuensi Pemakaian (Untuk Deteksi Hemat)</label>
           <select id="subUsage" class="w-full rounded-xl border border-pink-200 px-3 py-2 text-xs font-semibold text-pink-900">
-            <option value="high">✅ Sering Dipakai (Setiap Hari/Minggu)</option>
-            <option value="low">⚠️ Jarang Dipakai (Potensi Pemborosan)</option>
+            <option value="high">Sering Dipakai (Setiap Hari/Minggu)</option>
+            <option value="low">Jarang Dipakai (Potensi Hemat)</option>
           </select>
         </div>
         <button type="submit" class="w-full py-2.5 rounded-xl pink-gradient text-white text-xs font-bold">Simpan Langganan</button>
@@ -1182,7 +1320,7 @@
     <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-xl border border-pink-200 space-y-4">
       <div class="flex items-center justify-between border-b border-pink-100 pb-3">
         <div>
-          <h3 class="text-base font-extrabold text-pink-900">💱 Kurs Multi-Mata Uang (terhadap IDR)</h3>
+          <h3 class="text-base font-extrabold text-pink-900">Kurs Multi-Mata Uang (IDR)</h3>
           <p class="text-[11px] text-pink-600">Sesuaikan kurs konversi otomatis untuk transaksi valas</p>
         </div>
         <button type="button" data-close-modal="rateModal" class="text-pink-500 hover:text-pink-800 font-bold">✕</button>
@@ -1194,6 +1332,75 @@
     </div>
   </div>
 
+  <!-- ========================================== -->
+  <!-- MODAL: RIWAYAT LOG AKTIVITAS AKUN -->
+  <!-- ========================================== -->
+  <div id="historyLogModal" class="fixed inset-0 bg-pink-950/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4 no-print">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-5 sm:p-6 shadow-2xl border border-pink-200 flex flex-col max-h-[90vh]">
+      <!-- Header Modal -->
+      <div class="flex items-center justify-between border-b border-pink-100 pb-3">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-pink-100 text-pink-700 flex items-center justify-center shadow-2xs">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-base font-extrabold text-pink-900">Log Aktivitas Akun</h3>
+              <span id="logUserBadge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-pink-100 text-pink-700 border border-pink-200 flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-full bg-pink-500 text-white inline-flex items-center justify-center text-[9px] font-extrabold shadow-2xs">M</span><span>Mia</span></span>
+            </div>
+            <p class="text-xs text-pink-600">Riwayat audit setiap input, edit, transfer, dan simpan data</p>
+          </div>
+        </div>
+        <button type="button" data-close-modal="historyLogModal" aria-label="Tutup Modal" class="w-8 h-8 rounded-xl bg-pink-50 hover:bg-pink-100 text-pink-600 flex items-center justify-center transition shadow-2xs"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></button>
+      </div>
+
+      <!-- Toolbar: Filter, Search, & Actions -->
+      <div class="py-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 border-b border-pink-100">
+        <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1 sm:pb-0">
+          <button type="button" data-log-filter="ALL" class="log-filter-btn px-2.5 py-1 rounded-xl text-xs font-bold bg-pink-600 text-white shadow-2xs transition">Semua</button>
+          <button type="button" data-log-filter="Transaksi" class="log-filter-btn px-2.5 py-1 rounded-xl text-xs font-semibold bg-pink-50 text-pink-800 hover:bg-pink-100 transition">Transaksi</button>
+          <button type="button" data-log-filter="Dompet" class="log-filter-btn px-2.5 py-1 rounded-xl text-xs font-semibold bg-pink-50 text-pink-800 hover:bg-pink-100 transition">Dompet</button>
+          <button type="button" data-log-filter="Amplop" class="log-filter-btn px-2.5 py-1 rounded-xl text-xs font-semibold bg-pink-50 text-pink-800 hover:bg-pink-100 transition">Amplop</button>
+          <button type="button" data-log-filter="Tagihan" class="log-filter-btn px-2.5 py-1 rounded-xl text-xs font-semibold bg-pink-50 text-pink-800 hover:bg-pink-100 transition">Tagihan</button>
+          <button type="button" data-log-filter="Penyimpanan" class="log-filter-btn px-2.5 py-1 rounded-xl text-xs font-semibold bg-pink-50 text-pink-800 hover:bg-pink-100 transition">Simpan</button>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <button type="button" id="btnDownloadLogTxt" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white text-pink-800 border border-pink-200 hover:bg-pink-50 transition flex items-center gap-1.5 shadow-2xs" title="Unduh catatan log ke format teks TXT">
+            <svg class="w-3.5 h-3.5 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+            </svg>
+            <span>Unduh TXT</span>
+          </button>
+          <button type="button" id="btnClearLog" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white text-rose-600 border border-rose-200 hover:bg-rose-50 transition flex items-center gap-1.5 shadow-2xs" title="Bersihkan riwayat log akun ini">
+            <svg class="w-3.5 h-3.5 text-rose-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
+            </svg>
+            <span>Hapus Log</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Input in Modal -->
+      <div class="pt-2.5 pb-1">
+        <input id="logSearchInput" type="text" placeholder="Cari dalam log aktivitas akun..." class="w-full rounded-xl border border-pink-200 bg-pink-50/50 px-3.5 py-1.5 text-xs text-pink-900 focus:outline-none focus:ring-2 focus:ring-pink-400" />
+      </div>
+
+      <!-- Log Timeline Items Container -->
+      <div id="historyLogListContainer" class="flex-1 overflow-y-auto custom-scroll py-2 space-y-2.5 min-h-[220px]">
+        <!-- Dynamic Log Items Rendered Here -->
+      </div>
+
+      <!-- Footer Info -->
+      <div class="pt-3 border-t border-pink-100 flex items-center justify-between text-[11px] text-pink-600">
+        <span id="logSummaryCount">0 aktivitas tercatat</span>
+        <span id="logLastSavedTime">Tersimpan otomatis</span>
+      </div>
+    </div>
+  </div>
+
   <script>
     // ====================================================
     // SISTEM MULTI-USER: MIA & PETER (DATA TERISOLASI)
@@ -1202,6 +1409,8 @@
       mia: {
         id: 'mia',
         name: 'Mia',
+        initial: 'M',
+        avatarBg: 'bg-pink-500',
         avatar: '🌸',
         defaultTheme: 'pink',
         label: 'Akun Mia',
@@ -1211,6 +1420,8 @@
       peter: {
         id: 'peter',
         name: 'Peter',
+        initial: 'P',
+        avatarBg: 'bg-sky-600',
         avatar: '🧑‍💼',
         defaultTheme: 'ocean',
         label: 'Akun Peter',
@@ -1226,12 +1437,24 @@
     function getInitialDefaultState(userId) {
       const u = USERS[userId] || USERS.mia;
       const isMia = u.id === 'mia';
+      const nowIso = new Date().toISOString();
       return {
         colorTheme: u.defaultTheme,
         baseCurrency: 'IDR',
         budgetPeriod: 'monthly',
         alertThreshold: 80,
         bannerDismissed: false,
+        lastSavedTime: nowIso,
+        activityLogs: [
+          {
+            id: 'log_init_' + Date.now(),
+            timestamp: nowIso,
+            category: 'Sistem',
+            icon: '✨',
+            title: 'Akun Diinisialisasi',
+            description: `Akun ${u.name} siap digunakan dengan data terisolasi & otomatis tersimpan.`
+          }
+        ],
         ratesToIDR: {
           IDR: 1,
           USD: 15850,
@@ -1284,14 +1507,28 @@
         const saved = localStorage.getItem(userKey);
         if (saved) {
           const parsed = JSON.parse(saved);
-          return Object.assign({}, defaults, parsed);
+          const merged = Object.assign({}, defaults, parsed);
+          if (!merged.activityLogs || !Array.isArray(merged.activityLogs)) {
+            merged.activityLogs = defaults.activityLogs ? [...defaults.activityLogs] : [];
+          }
+          if (!merged.lastSavedTime) {
+            merged.lastSavedTime = new Date().toISOString();
+          }
+          return merged;
         }
         // Migrasi aman jika data sebelumnya ada di key legacy dan user Mia
         if (userId === 'mia') {
           const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
           if (legacy) {
             const parsedLegacy = JSON.parse(legacy);
-            return Object.assign({}, defaults, parsedLegacy);
+            const mergedLegacy = Object.assign({}, defaults, parsedLegacy);
+            if (!mergedLegacy.activityLogs || !Array.isArray(mergedLegacy.activityLogs)) {
+              mergedLegacy.activityLogs = defaults.activityLogs ? [...defaults.activityLogs] : [];
+            }
+            if (!mergedLegacy.lastSavedTime) {
+              mergedLegacy.lastSavedTime = new Date().toISOString();
+            }
+            return mergedLegacy;
           }
         }
       } catch (err) {
@@ -1305,23 +1542,331 @@
     let pieChartInstance = null;
     let barChartInstance = null;
 
-    function saveState() {
+    // ====================================================
+    // SISTEM LOG AKTIVITAS & PENYIMPANAN DATA PER AKUN
+    // ====================================================
+    function normalizeLogCategory(cat) {
+      if (!cat) return 'Sistem';
+      const c = String(cat).toLowerCase();
+      if (c.includes('trans') || c.includes('tx')) return 'Transaksi';
+      if (c.includes('dompet') || c.includes('wallet')) return 'Dompet';
+      if (c.includes('amplop') || c.includes('budget') || c.includes('anggaran')) return 'Amplop';
+      if (c.includes('tagih') || c.includes('bill') || c.includes('sub') || c.includes('utang') || c.includes('debt')) return 'Tagihan';
+      if (c.includes('simpan') || c.includes('nyimpan') || c.includes('impan') || c.includes('save') || c.includes('storage') || c.includes('backup') || c.includes('pulih')) return 'Penyimpanan';
+      return 'Sistem';
+    }
+
+    function logActivity(icon, category, title, description) {
+      if (!state.activityLogs || !Array.isArray(state.activityLogs)) {
+        state.activityLogs = [];
+      }
+      const normCat = normalizeLogCategory(category);
+      const entry = {
+        id: 'log_' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+        timestamp: new Date().toISOString(),
+        category: normCat,
+        icon: icon || '📝',
+        title: title || 'Aktivitas Akun',
+        description: description || ''
+      };
+      state.activityLogs.unshift(entry);
+      // Batasi maksimal 200 entri per akun agar performa dan penyimpanan tetap optimal
+      if (state.activityLogs.length > 200) {
+        state.activityLogs = state.activityLogs.slice(0, 200);
+      }
+      updateLastSavedIndicator();
+    }
+
+    function formatLogTime(isoString) {
+      if (!isoString) return '-';
+      const d = new Date(isoString);
+      if (isNaN(d.getTime())) return '-';
+      const now = new Date();
+      const isToday = d.toDateString() === now.toDateString();
+      const timeStr = d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      if (isToday) {
+        return `Hari ini, ${timeStr}`;
+      }
+      const dateStr = d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+      return `${dateStr} ${timeStr}`;
+    }
+
+    function updateLastSavedIndicator() {
+      const user = USERS[currentUserId] || USERS.mia;
+      const timeStr = state.lastSavedTime ? formatLogTime(state.lastSavedTime) : 'Baru saja';
+
+      // Update Live Save Status di Drawer
+      const drawerSaveEl = document.getElementById('drawerSaveStatus');
+      if (drawerSaveEl) {
+        drawerSaveEl.innerHTML = `<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Tersimpan: <strong class="text-pink-900 font-bold">${timeStr}</strong>`;
+      }
+
+      // Update status di dalam modal Log Aktivitas
+      const modalSaveEl = document.getElementById('logLastSavedTime');
+      if (modalSaveEl) {
+        modalSaveEl.textContent = timeStr;
+      }
+
+      // Update badge user di modal log
+      const userBadge = document.getElementById('logUserBadge');
+      if (userBadge) {
+        userBadge.innerHTML = `<span class="w-3.5 h-3.5 rounded-full ${user.avatarBg} text-white inline-flex items-center justify-center text-[9px] font-extrabold shadow-2xs">${user.initial}</span><span>${user.name}</span>`;
+      }
+
+      // Update badge jumlah log di header dan drawer
+      const logCount = (state.activityLogs && state.activityLogs.length) ? state.activityLogs.length : 0;
+      const headerBadge = document.getElementById('headerLogCountBadge');
+      if (headerBadge) {
+        headerBadge.textContent = logCount > 99 ? '99+' : String(logCount);
+        headerBadge.classList.toggle('hidden', logCount === 0);
+      }
+      const drawerBadge = document.getElementById('drawerLogBadge');
+      if (drawerBadge) {
+        drawerBadge.textContent = logCount > 99 ? '99+' : String(logCount);
+        drawerBadge.classList.toggle('hidden', logCount === 0);
+      }
+    }
+
+    function saveState(manual = false) {
       try {
+        state.lastSavedTime = new Date().toISOString();
+        if (manual) {
+          logActivity('💾', 'Penyimpanan', 'Penyimpanan Manual', `Data akun ${USERS[currentUserId].name} berhasil disimpan secara manual.`);
+        }
         const userKey = USER_STORAGE_PREFIX + currentUserId;
         localStorage.setItem(userKey, JSON.stringify(state));
+        updateLastSavedIndicator();
+        if (manual) {
+          showToast(`💾 Data ${USERS[currentUserId].name} (${USERS[currentUserId].avatar}) berhasil disimpan!`);
+        }
       } catch (err) {
         // Ignore storage error inside sandboxed iframe
       }
     }
 
+    let currentLogFilter = 'ALL';
+    let currentLogSearch = '';
+
+    function renderHistoryLog() {
+      updateLastSavedIndicator();
+      const container = document.getElementById('historyLogListContainer');
+      if (!container) return;
+
+      const logs = state.activityLogs || [];
+      const query = (currentLogSearch || '').trim().toLowerCase();
+
+      const filtered = logs.filter(item => {
+        if (currentLogFilter !== 'ALL' && item.category !== currentLogFilter) {
+          return false;
+        }
+        if (query) {
+          const matchTitle = (item.title || '').toLowerCase().includes(query);
+          const matchDesc = (item.description || '').toLowerCase().includes(query);
+          const matchCat = (item.category || '').toLowerCase().includes(query);
+          if (!matchTitle && !matchDesc && !matchCat) return false;
+        }
+        return true;
+      });
+
+      // Update tombol filter visual
+      document.querySelectorAll('[data-log-filter]').forEach(btn => {
+        const f = btn.getAttribute('data-log-filter');
+        const isActive = f === currentLogFilter;
+        if (isActive) {
+          btn.className = 'log-filter-btn px-2.5 py-1 rounded-xl text-xs font-bold bg-pink-600 text-white shadow-2xs transition';
+        } else {
+          btn.className = 'log-filter-btn px-2.5 py-1 rounded-xl text-xs font-semibold bg-pink-50 text-pink-800 hover:bg-pink-100 transition';
+        }
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="py-12 flex flex-col items-center justify-center text-center text-pink-400">
+            <div class="w-12 h-12 rounded-2xl bg-pink-100/70 text-pink-600 flex items-center justify-center mb-2.5 shadow-2xs">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-bold text-pink-900">Tidak ada riwayat log yang sesuai</div>
+            <div class="text-xs text-pink-500 mt-1">Setiap aktivitas transaksi atau penyimpanan akan otomatis tercatat di sini</div>
+          </div>
+        `;
+        return;
+      }
+
+      const categoryColorMap = {
+        'Transaksi': 'bg-pink-50 text-pink-700 border-pink-200',
+        'Dompet': 'bg-sky-50 text-sky-700 border-sky-200',
+        'Amplop': 'bg-purple-50 text-purple-700 border-purple-200',
+        'Tagihan': 'bg-amber-50 text-amber-700 border-amber-200',
+        'Penyimpanan': 'bg-emerald-50 text-emerald-700 border-emerald-200',
+        'Sistem': 'bg-slate-50 text-slate-700 border-slate-200'
+      };
+
+      const categoryIconMap = {
+        'Transaksi': `<svg class="w-4 h-4 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>`,
+        'Dompet': `<svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-6 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg>`,
+        'Amplop': `<svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"/></svg>`,
+        'Tagihan': `<svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>`,
+        'Penyimpanan': `<svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/></svg>`,
+        'Sistem': `<svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`
+      };
+
+      container.innerHTML = filtered.map(item => {
+        const timeFormatted = formatLogTime(item.timestamp);
+        const catClass = categoryColorMap[item.category] || categoryColorMap['Sistem'];
+        const iconSvg = categoryIconMap[item.category] || categoryIconMap['Sistem'];
+        return `
+          <div class="p-3 rounded-2xl bg-white border border-pink-100 shadow-2xs hover:border-pink-200 transition flex items-start gap-3">
+            <div class="w-8 h-8 rounded-xl bg-pink-50 flex items-center justify-center shrink-0 border border-pink-100 shadow-2xs">
+              ${iconSvg}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <span class="text-xs font-bold text-pink-950 truncate">${item.title}</span>
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold border ${catClass}">${item.category}</span>
+                  <span class="text-[11px] font-medium text-pink-500">${timeFormatted}</span>
+                </div>
+              </div>
+              ${item.description ? `<p class="text-xs text-pink-700/80 mt-1 leading-relaxed break-words">${item.description}</p>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleManualSave() {
+      saveState(true);
+      const btns = [document.getElementById('btnManualSave'), document.getElementById('btnDrawerManualSave')];
+      btns.forEach(b => {
+        if (!b) return;
+        b.classList.add('ring-2', 'ring-emerald-400');
+        setTimeout(() => b.classList.remove('ring-2', 'ring-emerald-400'), 800);
+      });
+      renderHistoryLog();
+    }
+
+    function downloadLogTxt() {
+      const user = USERS[currentUserId] || USERS.mia;
+      const logs = state.activityLogs || [];
+      let content = `====================================================\n`;
+      content += `📜 PINKYPAY - RIWAYAT LOG AKTIVITAS AKUN\n`;
+      content += `Akun: ${user.name} (${user.label})\n`;
+      content += `Waktu Ekspor: ${new Date().toLocaleString('id-ID')}\n`;
+      content += `Total Log: ${logs.length} entri\n`;
+      content += `Penyimpanan Terakhir: ${formatLogTime(state.lastSavedTime)}\n`;
+      content += `====================================================\n\n`;
+
+      if (logs.length === 0) {
+        content += `(Belum ada riwayat aktivitas yang tercatat)\n`;
+      } else {
+        logs.forEach((item, index) => {
+          content += `[${index + 1}] ${formatLogTime(item.timestamp)} | [${item.category}] ${item.title}\n`;
+          if (item.description) {
+            content += `    Detail: ${item.description}\n`;
+          }
+          content += `----------------------------------------------------\n`;
+        });
+      }
+
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const dateStr = new Date().toISOString().slice(0, 10);
+      a.href = url;
+      a.download = `pinkypay_log_${currentUserId}_${dateStr}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('📥 File riwayat log berhasil diunduh!');
+    }
+
+    function clearActivityLogs() {
+      const user = USERS[currentUserId] || USERS.mia;
+      if (!confirm(`Hapus seluruh riwayat log aktivitas untuk ${user.label}? (Data transaksi dan saldo dompet tidak akan terhapus)`)) {
+        return;
+      }
+      state.activityLogs = [];
+      logActivity('🧹', 'Penyimpanan', 'Log Dibersihkan', `Riwayat log aktivitas direset oleh ${user.name}.`);
+      saveState(false);
+      renderHistoryLog();
+      showToast('🧹 Riwayat log aktivitas berhasil dibersihkan!');
+    }
+
+    function exportJsonBackup() {
+      const user = USERS[currentUserId] || USERS.mia;
+      const backupData = {
+        app: 'PinkyPay',
+        version: '2.0',
+        userId: currentUserId,
+        userName: user.name,
+        exportedAt: new Date().toISOString(),
+        state: state
+      };
+      const jsonStr = JSON.stringify(backupData, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const dateStr = new Date().toISOString().slice(0, 10);
+      a.href = url;
+      a.download = `pinkypay_${currentUserId}_backup_${dateStr}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      logActivity('📦', 'Penyimpanan', 'Cadangkan Data JSON', `Cadangan lengkap akun ${user.name} diunduh sebagai file JSON.`);
+      saveState(false);
+      renderHistoryLog();
+      showToast(`📦 File cadangan ${user.name} berhasil diunduh!`);
+    }
+
+    function restoreJsonBackup(file) {
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          let restoredState = null;
+          if (parsed && parsed.app === 'PinkyPay' && parsed.state) {
+            restoredState = parsed.state;
+          } else if (parsed && parsed.categories && parsed.wallets) {
+            restoredState = parsed;
+          } else {
+            throw new Error('Format file JSON tidak cocok untuk data PinkyPay.');
+          }
+
+          const defaults = getInitialDefaultState(currentUserId);
+          state = Object.assign({}, defaults, restoredState);
+          if (!Array.isArray(state.activityLogs)) state.activityLogs = [];
+          logActivity('📥', 'Penyimpanan', 'Pulihkan Data JSON', `Data akun ${USERS[currentUserId].name} berhasil dipulihkan dari file "${file.name}".`);
+          saveState(false);
+          renderAll();
+          showToast(`✨ Data ${USERS[currentUserId].name} berhasil dipulihkan dari file cadangan!`);
+        } catch (err) {
+          alert('Gagal membaca file JSON cadangan: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
     function switchUser(targetUserId) {
       if (!USERS[targetUserId] || targetUserId === currentUserId) return;
-      saveState();
+      logActivity('👤', 'Sistem', 'Beralih Akun', `Pengguna beralih ke akun ${USERS[targetUserId].name}`);
+      saveState(false);
       currentUserId = targetUserId;
       try {
         localStorage.setItem(ACTIVE_USER_STORAGE_KEY, currentUserId);
       } catch (err) {}
       state = loadUserState(currentUserId);
+      if (!state.activityLogs || !Array.isArray(state.activityLogs)) {
+        state.activityLogs = [];
+      }
+      if (!state.lastSavedTime) {
+        state.lastSavedTime = new Date().toISOString();
+      }
+      logActivity('✨', 'Sistem', 'Akun Aktif', `Ruang akun ${USERS[currentUserId].name} dimuat`);
       if (state.colorTheme) {
         applyColorTheme(state.colorTheme);
       }
@@ -1330,47 +1875,54 @@
     }
 
     function updateUserSwitcherUI() {
-      const user = USERS[currentUserId];
+      const user = USERS[currentUserId] || USERS.mia;
 
       // Update button switcher states (Navbar & Drawer)
       document.querySelectorAll('[data-switch-user]').forEach(btn => {
         const uid = btn.getAttribute('data-switch-user');
+        const targetU = USERS[uid] || user;
         const isActive = uid === currentUserId;
         if (btn.classList.contains('drawer-user-btn')) {
-          btn.className = `drawer-user-btn py-2 px-3 rounded-xl text-xs font-extrabold border transition flex items-center justify-center gap-1.5 ${
+          btn.className = `drawer-user-btn py-2 px-3 rounded-xl text-xs font-bold border transition flex items-center justify-center gap-1.5 ${
             isActive
-              ? 'bg-pink-600 text-white border-pink-600 shadow-sm'
-              : 'bg-white text-pink-800 border-pink-200 hover:bg-pink-100'
+              ? 'bg-pink-600 text-white border-pink-600 shadow-xs'
+              : 'bg-white text-pink-900 border-pink-200 hover:bg-pink-100/70'
           }`;
+          btn.innerHTML = `<span class="w-4 h-4 rounded-full ${targetU.avatarBg} text-white inline-flex items-center justify-center text-[10px] font-extrabold shadow-2xs">${targetU.initial}</span><span>${targetU.name}</span>`;
         } else {
-          btn.className = `user-switch-btn flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-xl text-xs font-extrabold transition ${
+          btn.className = `user-switch-btn flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg text-xs font-bold transition ${
             isActive
-              ? 'bg-white text-pink-900 shadow-sm ring-1 ring-pink-300'
-              : 'text-pink-700 hover:text-pink-950 font-semibold opacity-75 hover:opacity-100'
+              ? 'bg-white text-pink-950 shadow-xs'
+              : 'text-pink-700 hover:text-pink-950 opacity-75 hover:opacity-100'
           }`;
+          btn.innerHTML = `<span class="w-4 h-4 rounded-full ${targetU.avatarBg} text-white inline-flex items-center justify-center text-[10px] font-extrabold shadow-2xs">${targetU.initial}</span><span>${targetU.name}</span>`;
         }
       });
 
       // Update Drawer badge
       const drawerBadge = document.getElementById('drawerActiveUserBadge');
-      if (drawerBadge) drawerBadge.textContent = `${user.avatar} ${user.name}`;
+      if (drawerBadge) {
+        drawerBadge.innerHTML = `<span class="w-3.5 h-3.5 rounded-full ${user.avatarBg} text-white inline-flex items-center justify-center text-[9px] font-extrabold shadow-2xs">${user.initial}</span><span>${user.name}</span>`;
+      }
 
       // Update Hero Card badge
       const heroIcon = document.getElementById('heroUserIcon');
       const heroName = document.getElementById('heroUserName');
-      if (heroIcon) heroIcon.textContent = user.avatar;
+      if (heroIcon) {
+        heroIcon.innerHTML = `<span class="w-3.5 h-3.5 rounded-full ${user.avatarBg} text-white inline-flex items-center justify-center text-[9px] font-extrabold shadow-2xs">${user.initial}</span>`;
+      }
       if (heroName) heroName.textContent = `Akun ${user.name}`;
 
       // Update Quick Text & Manual Form Header
       const quickTitle = document.getElementById('quickTextHeaderTitle');
-      if (quickTitle) quickTitle.textContent = `Input Transaksi via Ketik Teks / Chat Pintar — Akun ${user.name}`;
+      if (quickTitle) quickTitle.textContent = `Catat Cepat Transaksi (${user.name})`;
 
       const manualTitle = document.getElementById('manualFormHeaderTitle');
       if (manualTitle) manualTitle.textContent = `Catat Transaksi Manual (${user.name})`;
 
       // Update AI Drawer Title
       const aiTitle = document.getElementById('aiDrawerTitle');
-      if (aiTitle) aiTitle.textContent = `PinkyBot — Asisten Keuangan AI (${user.name})`;
+      if (aiTitle) aiTitle.textContent = `PinkyBot — Asisten Keuangan (${user.name})`;
 
       // Sync Header Selects
       const themeSelect = document.getElementById('themeColorSelect');
@@ -1493,8 +2045,10 @@
     // RENDER UTAMA (SINKRONISASI SEMUA KOMPONEN)
     // ====================================================
     function renderAll() {
-      saveState();
+      saveState(false);
       updateUserSwitcherUI();
+      updateLastSavedIndicator();
+      renderHistoryLog();
       renderHeaderControls();
       renderKPIsAndAlerts();
       renderTransactionSelects();
@@ -1744,8 +2298,10 @@
               <span class="text-xs sm:text-sm font-extrabold ${isExp ? 'text-rose-600' : 'text-emerald-600'}">
                 ${isExp ? '-' : '+'} ${formatMoneyFromIDR(tx.amountIDR)}
               </span>
-              <button type="button" data-delete-tx="${tx.id}" title="Hapus Transaksi" class="w-7 h-7 rounded-lg text-pink-400 hover:text-rose-600 hover:bg-rose-50 flex items-center justify-center text-xs transition">
-                🗑️
+              <button type="button" data-delete-tx="${tx.id}" aria-label="Hapus Transaksi" title="Hapus Transaksi" class="w-7 h-7 rounded-lg text-pink-400 hover:text-rose-600 hover:bg-rose-50 flex items-center justify-center transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
+                </svg>
               </button>
             </div>
           </div>
@@ -1755,31 +2311,42 @@
 
     function renderWallets() {
       const container = document.getElementById('walletGridContainer');
-      const iconMap = {
-        'Bank': '🏦',
-        'E-Wallet': '📱',
-        'Tunai': '💵',
-        'Kartu Kredit': '💳'
+      const getWalletSvg = (type) => {
+        if (type === 'Bank') {
+          return `<svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.5m-15 10.5V10.5M1.5 21h21"/></svg>`;
+        }
+        if (type === 'E-Wallet') {
+          return `<svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>`;
+        }
+        if (type === 'Kartu Kredit') {
+          return `<svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-6 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg>`;
+        }
+        return `<svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m16.5 0h.75a.75.75 0 01.75.75v.75m0 0v6.75a.75.75 0 01-.75.75H19.5m-15 0H3.75a.75.75 0 01-.75-.75V7.5m15 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v1.5m16.5 0v6.75a2.25 2.25 0 01-2.25 2.25H5.25a2.25 2.25 0 01-2.25-2.25V7.5m10.5 4.5a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`;
       };
+
       container.innerHTML = state.wallets.map(w => {
         const isNegative = w.balanceIDR < 0;
         return `
-          <div class="p-3.5 rounded-2xl bg-gradient-to-br from-white via-pink-50/70 to-pink-100/60 border border-pink-200 flex items-center justify-between gap-2 shadow-2xs">
+          <div class="p-3.5 rounded-2xl bg-white border border-pink-200/80 flex items-center justify-between gap-2 shadow-2xs hover:border-pink-300 transition">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl pink-gradient text-white flex items-center justify-center text-lg shadow-xs">
-                ${iconMap[w.type] || '👛'}
+              <div class="w-10 h-10 rounded-xl bg-pink-50 border border-pink-100 flex items-center justify-center shrink-0 shadow-2xs">
+                ${getWalletSvg(w.type)}
               </div>
               <div>
                 <div class="flex items-center gap-1.5">
                   <p class="text-xs font-extrabold text-pink-950">${w.name}</p>
-                  <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-pink-200/70 text-pink-800 font-bold">${w.type}</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded-full bg-pink-100 text-pink-800 font-bold">${w.type}</span>
                 </div>
                 <p class="text-sm sm:text-base font-extrabold ${isNegative ? 'text-rose-600' : 'text-pink-900'} mt-0.5">
                   ${formatMoneyFromIDR(w.balanceIDR)}
                 </p>
               </div>
             </div>
-            <button type="button" data-delete-wallet="${w.id}" class="text-xs text-pink-400 hover:text-rose-600 px-2 py-1 rounded-lg">✕</button>
+            <button type="button" data-delete-wallet="${w.id}" aria-label="Hapus Dompet" class="text-pink-400 hover:text-rose-600 p-1.5 rounded-lg hover:bg-rose-50 transition" title="Hapus dompet">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
           </div>
         `;
       }).join('');
@@ -1851,10 +2418,10 @@
         let statusTag = `<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-pink-100 text-pink-700">Aman (${pct}%)</span>`;
         if (pct >= 100) {
           barColor = 'bg-rose-600';
-          statusTag = `<span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">🚨 Melebihi Kuota (${pct}%)</span>`;
+          statusTag = `<span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">Melebihi Kuota (${pct}%)</span>`;
         } else if (pct >= state.alertThreshold) {
           barColor = 'bg-amber-500';
-          statusTag = `<span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">⚠️ Hampir Penuh (${pct}%)</span>`;
+          statusTag = `<span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Hampir Penuh (${pct}%)</span>`;
         }
 
         return `
@@ -1908,7 +2475,11 @@
                   <span class="w-8 h-8 rounded-xl bg-pink-200/70 flex items-center justify-center text-base">${env.icon}</span>
                   <h4 class="text-xs sm:text-sm font-extrabold text-pink-950">${env.name}</h4>
                 </div>
-                <button type="button" data-delete-env="${env.id}" class="text-xs text-pink-400 hover:text-rose-600">✕</button>
+                <button type="button" data-delete-env="${env.id}" aria-label="Hapus Amplop" class="text-pink-400 hover:text-rose-600 p-1 rounded-lg hover:bg-rose-50 transition">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
               </div>
 
               <div class="mt-3">
@@ -1953,7 +2524,7 @@
               <div class="flex items-center gap-2">
                 <span class="text-sm font-extrabold text-pink-950">${b.name}</span>
                 <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${b.paid ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}">
-                  ${b.paid ? '✓ Sudah Dibayar' : '⏰ Jatuh Tempo: ' + b.dueDate}
+                  ${b.paid ? '✓ Sudah Dibayar' : 'Jatuh Tempo: ' + b.dueDate}
                 </span>
               </div>
               <p class="text-xs font-extrabold text-pink-700 mt-1">${formatMoneyFromIDR(b.amountIDR)}</p>
@@ -1963,7 +2534,11 @@
                 ? `<span class="text-xs font-bold text-emerald-600 px-2">Lunas</span>`
                 : `<button type="button" data-pay-bill="${b.id}" class="px-3 py-1.5 rounded-xl pink-gradient text-white text-xs font-bold shadow-xs hover:opacity-95 transition">Bayar Sekarang</button>`
               }
-              <button type="button" data-delete-bill="${b.id}" class="text-xs text-pink-400 hover:text-rose-600 px-1.5">✕</button>
+              <button type="button" data-delete-bill="${b.id}" aria-label="Hapus Tagihan" class="text-pink-400 hover:text-rose-600 p-1 rounded-lg hover:bg-rose-50 transition">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
             </div>
           </div>
         `;
@@ -2266,6 +2841,14 @@
       // Update wallet balance
       wallet.balanceIDR += (type === 'income' ? amountIDR : -amountIDR);
       state.transactions.unshift(newTx);
+
+      logActivity(
+        category.icon || (type === 'income' ? '💰' : '💸'),
+        'Transaksi',
+        `${type === 'income' ? 'Pemasukan' : 'Pengeluaran'}: ${text}`,
+        `${formatOriginalCurrency(num, currency)} (${formatMoneyFromIDR(amountIDR)}) via ${wallet.name} [${category.icon} ${category.name}]`
+      );
+
       return { tx: newTx, category, wallet };
     }
 
@@ -2331,6 +2914,18 @@
     }
 
     // ====================================================
+    // HELPER MODAL GLOBAL
+    // ====================================================
+    function openModal(id) {
+      const m = document.getElementById(id);
+      if (m) { m.classList.remove('hidden'); m.classList.add('flex'); }
+    }
+    function closeModal(id) {
+      const m = document.getElementById(id);
+      if (m) { m.classList.add('hidden'); m.classList.remove('flex'); }
+    }
+
+    // ====================================================
     // EVENT LISTENERS & INTERAKSI UI
     // ====================================================
     window.addEventListener('DOMContentLoaded', () => {
@@ -2377,7 +2972,8 @@
         const currentTheme = state.colorTheme || u.defaultTheme;
         state = getInitialDefaultState(currentUserId);
         state.colorTheme = currentTheme;
-        saveState();
+        logActivity('🔄', 'Sistem', 'Reset Akun', `Seluruh data ${u.label} dikosongkan ke pengaturan awal.`);
+        saveState(false);
         renderAll();
         closeBurgerMenu();
         showToast(`🔄 Data ${u.label} berhasil dikosongkan!`);
@@ -2605,6 +3201,14 @@
           if (env) env.spentIDR += amountIDR;
         }
 
+        const catObj = state.categories.find(c => c.id === categoryId);
+        logActivity(
+          catObj ? catObj.icon : (type === 'income' ? '💰' : '💸'),
+          'Transaksi',
+          `${type === 'income' ? 'Pemasukan' : 'Pengeluaran'}: ${title}`,
+          `${formatOriginalCurrency(amount, currency)} (${formatMoneyFromIDR(amountIDR)}) via ${wal ? wal.name : 'Dompet'} [${catObj ? catObj.name : 'Kategori'}]`
+        );
+
         document.getElementById('txTitle').value = '';
         document.getElementById('txAmount').value = '';
         document.getElementById('txConversionPreview').classList.add('hidden');
@@ -2629,6 +3233,7 @@
           const wal = state.wallets.find(w => w.id === tx.walletId);
           if (wal) wal.balanceIDR += (tx.type === 'income' ? -tx.amountIDR : tx.amountIDR);
           state.transactions.splice(idx, 1);
+          logActivity('🗑️', 'Transaksi', 'Hapus Transaksi', `Transaksi "${tx.title}" (${formatMoneyFromIDR(tx.amountIDR)}) dihapus.`);
           renderAll();
           showToast('🗑️ Transaksi dihapus & saldo dompet disesuaikan');
         }
@@ -2643,7 +3248,9 @@
           return;
         }
         const id = btn.getAttribute('data-delete-wallet');
+        const targetWal = state.wallets.find(w => w.id === id);
         state.wallets = state.wallets.filter(w => w.id !== id);
+        logActivity('🗑️', 'Dompet', 'Hapus Dompet', `Dompet "${targetWal ? targetWal.name : id}" dihapus.`);
         renderAll();
         showToast('Dompet dihapus');
       });
@@ -2660,6 +3267,12 @@
           if (mainWallet) {
             mainWallet.balanceIDR += (debt.type === 'receivable' ? debt.amountIDR : -debt.amountIDR);
           }
+          logActivity(
+            '✅',
+            'Tagihan',
+            `Pelunasan ${debt.type === 'receivable' ? 'Piutang' : 'Utang'}`,
+            `${debt.person}: ${formatMoneyFromIDR(debt.amountIDR)} ditandai lunas.`
+          );
           renderAll();
           showToast(`🤝 ${debt.type === 'receivable' ? 'Piutang' : 'Utang'} ${debt.person} ditandai lunas!`);
         }
@@ -2695,6 +3308,7 @@
           const env = state.envelopes.find(x => x.id === topupBtn.getAttribute('data-topup-env'));
           if (env) {
             env.allocatedIDR += 100000;
+            logActivity('💌', 'Amplop', 'Topup Amplop Digital', `Kuota amplop "${env.name}" ditambah Rp 100.000.`);
             renderAll();
             showToast(`💌 Kuota amplop "${env.name}" ditambah Rp 100.000`);
           }
@@ -2703,12 +3317,15 @@
           if (env) {
             env.spentIDR += 50000;
             state.bannerDismissed = false;
+            logActivity('💸', 'Amplop', 'Pengeluaran Amplop Digital', `Dana amplop "${env.name}" terpakai Rp 50.000.`);
             renderAll();
             showToast(`💸 Dana amplop "${env.name}" terpakai Rp 50.000`);
           }
         } else if (delBtn) {
           const id = delBtn.getAttribute('data-delete-env');
+          const targetEnv = state.envelopes.find(x => x.id === id);
           state.envelopes = state.envelopes.filter(x => x.id !== id);
+          logActivity('🗑️', 'Amplop', 'Hapus Amplop Digital', `Amplop "${targetEnv ? targetEnv.name : id}" dihapus.`);
           renderAll();
           showToast('Amplop digital dihapus');
         }
@@ -2736,12 +3353,15 @@
               envelopeId: '',
               date: '2026-11-04'
             });
+            logActivity('✅', 'Tagihan', 'Bayar Tagihan', `Tagihan "${bill.name}" (${formatMoneyFromIDR(bill.amountIDR)}) berhasil dibayar lunas.`);
             renderAll();
             showToast(`✅ Tagihan "${bill.name}" lunas & otomatis masuk riwayat transaksi!`);
           }
         } else if (delBtn) {
           const id = delBtn.getAttribute('data-delete-bill');
+          const targetBill = state.bills.find(b => b.id === id);
           state.bills = state.bills.filter(b => b.id !== id);
+          logActivity('🗑️', 'Tagihan', 'Hapus Tagihan', `Pengingat tagihan "${targetBill ? targetBill.name : id}" dihapus.`);
           renderAll();
           showToast('Pengingat tagihan dihapus');
         }
@@ -2754,6 +3374,7 @@
         const sub = state.subscriptions.find(s => s.id === btn.getAttribute('data-toggle-sub'));
         if (sub) {
           sub.active = !sub.active;
+          logActivity('✂️', 'Tagihan', sub.active ? 'Aktifkan Langganan' : 'Nonaktifkan Langganan', `Langganan "${sub.name}" ${sub.active ? 'diaktifkan kembali' : 'dinonaktifkan untuk menghemat anggaran'}.`);
           renderAll();
           showToast(sub.active ? `Layanan ${sub.name} diaktifkan kembali` : `✂️ Langganan ${sub.name} dinonaktifkan untuk menghemat anggaran!`);
         }
@@ -2871,6 +3492,7 @@
           const val = parseFormattedNumber(inp.value);
           if (val > 0) state.ratesToIDR[c] = val;
         });
+        logActivity('💱', 'Sistem', 'Perbarui Kurs Mata Uang', 'Nilai tukar mata uang asing diperbarui.');
         closeModal('rateModal');
         renderAll();
         showToast('💱 Kurs mata uang diperbarui!');
@@ -2890,6 +3512,7 @@
           type,
           monthlyLimit: type === 'expense' ? 1000000 : 0
         });
+        logActivity('🏷️', 'Sistem', 'Tambah Kategori', `Kategori "${name}" (${type === 'income' ? 'Pemasukan' : 'Pengeluaran'}) ditambahkan.`);
         document.getElementById('newCatName').value = '';
         renderAll();
         showToast(`Kategori "${name}" berhasil ditambahkan!`);
@@ -2900,7 +3523,9 @@
         if (!btn) return;
         const id = btn.getAttribute('data-delete-cat');
         if (state.categories.length <= 2) return;
+        const targetCat = state.categories.find(c => c.id === id);
         state.categories = state.categories.filter(c => c.id !== id);
+        logActivity('🗑️', 'Sistem', 'Hapus Kategori', `Kategori "${targetCat ? targetCat.name : id}" dihapus.`);
         renderAll();
         showToast('Kategori dihapus');
       });
@@ -2920,6 +3545,7 @@
           currency,
           balanceIDR: convertToIDR(bal, currency)
         });
+        logActivity('👛', 'Dompet', 'Tambah Dompet Baru', `Dompet "${name}" (${type}) dibuat dengan saldo awal ${formatOriginalCurrency(bal, currency)}.`);
         document.getElementById('newWalletName').value = '';
         document.getElementById('newWalletBalance').value = '';
         closeModal('walletModal');
@@ -2942,6 +3568,7 @@
         if (fromW && toW) {
           fromW.balanceIDR -= amt;
           toW.balanceIDR += amt;
+          logActivity('🔄', 'Dompet', 'Transfer Antar Dompet', `Transfer ${formatMoneyFromIDR(amt)} dari ${fromW.name} ke ${toW.name}.`);
           document.getElementById('transferAmount').value = '';
           closeModal('transferModal');
           renderAll();
@@ -2967,6 +3594,7 @@
           note,
           settled: false
         });
+        logActivity('🤝', 'Tagihan', `Tambah ${type === 'receivable' ? 'Piutang' : 'Utang'}`, `${person}: ${formatMoneyFromIDR(amountIDR)} (Jatuh tempo: ${dueDate || '-'}).`);
         document.getElementById('debtPerson').value = '';
         document.getElementById('debtAmount').value = '';
         document.getElementById('debtNote').value = '';
@@ -2984,6 +3612,7 @@
           if (cat) cat.monthlyLimit = Math.max(0, parseFormattedNumber(inp.value || '0'));
         });
         state.bannerDismissed = false;
+        logActivity('✏️', 'Amplop', 'Perbarui Kuota Anggaran', 'Alokasi kuota anggaran bulanan diperbarui.');
         closeModal('editBudgetModal');
         renderAll();
         showToast('✏️ Kuota anggaran bulanan diperbarui!');
@@ -3004,6 +3633,7 @@
           allocatedIDR,
           spentIDR
         });
+        logActivity('💌', 'Amplop', 'Tambah Amplop Digital', `Amplop "${name}" dibuat dengan target alokasi ${formatMoneyFromIDR(allocatedIDR)}.`);
         document.getElementById('envName').value = '';
         document.getElementById('envAllocated').value = '';
         closeModal('envelopeModal');
@@ -3027,6 +3657,7 @@
           categoryId,
           paid: false
         });
+        logActivity('🔔', 'Tagihan', 'Tambah Pengingat Tagihan', `Tagihan "${name}" senilai ${formatMoneyFromIDR(amountIDR)} (Jatuh tempo: ${dueDate || '-'}).`);
         document.getElementById('billName').value = '';
         document.getElementById('billAmount').value = '';
         closeModal('billModal');
@@ -3043,7 +3674,7 @@
         const billingDay = parseInt(document.getElementById('subBillingDay').value || '1', 10);
         const usage = document.getElementById('subUsage').value;
         if (!name || monthlyCostIDR <= 0) return;
-        state.subscwriptions.push({
+        state.subscriptions.push({
           id: 'sub_' + Date.now(),
           name,
           icon,
@@ -3052,6 +3683,7 @@
           usage,
           active: true
         });
+        logActivity('📺', 'Tagihan', 'Tambah Langganan Rutin', `Langganan "${name}" (${formatMoneyFromIDR(monthlyCostIDR)}/bln).`);
         document.getElementById('subName').value = '';
         document.getElementById('subCost').value = '';
         closeModal('subModal');
@@ -3079,6 +3711,66 @@
           handleFormattedNumberInput(e.target);
         }
       });
+
+      // ====================================================
+      // EVENT LISTENERS: LOG AKTIVITAS, SIMPAN, & CADANGAN
+      // ====================================================
+      const btnSave = document.getElementById('btnManualSave');
+      if (btnSave) btnSave.addEventListener('click', handleManualSave);
+
+      const btnDrawerSave = document.getElementById('btnDrawerManualSave');
+      if (btnDrawerSave) btnDrawerSave.addEventListener('click', handleManualSave);
+
+      const btnOpenLog = document.getElementById('btnOpenHistoryLog');
+      if (btnOpenLog) {
+        btnOpenLog.addEventListener('click', () => {
+          openModal('historyLogModal');
+          renderHistoryLog();
+        });
+      }
+
+      const btnDrawerLog = document.getElementById('btnDrawerOpenHistoryLog');
+      if (btnDrawerLog) {
+        btnDrawerLog.addEventListener('click', () => {
+          closeBurgerMenu();
+          openModal('historyLogModal');
+          renderHistoryLog();
+        });
+      }
+
+      document.querySelectorAll('[data-log-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentLogFilter = btn.getAttribute('data-log-filter');
+          renderHistoryLog();
+        });
+      });
+
+      const logSearchInp = document.getElementById('logSearchInput');
+      if (logSearchInp) {
+        logSearchInp.addEventListener('input', (e) => {
+          currentLogSearch = e.target.value;
+          renderHistoryLog();
+        });
+      }
+
+      const btnDownloadLog = document.getElementById('btnDownloadLogTxt');
+      if (btnDownloadLog) btnDownloadLog.addEventListener('click', downloadLogTxt);
+
+      const btnClearLog = document.getElementById('btnClearLog');
+      if (btnClearLog) btnClearLog.addEventListener('click', clearActivityLogs);
+
+      const btnBackup = document.getElementById('btnBackupJson');
+      if (btnBackup) btnBackup.addEventListener('click', exportJsonBackup);
+
+      const restoreInp = document.getElementById('restoreJsonInput');
+      if (restoreInp) {
+        restoreInp.addEventListener('change', (e) => {
+          if (e.target.files && e.target.files[0]) {
+            restoreJsonBackup(e.target.files[0]);
+            e.target.value = '';
+          }
+        });
+      }
 
       // Initial Render
       renderAll();
